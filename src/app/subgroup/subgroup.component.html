@@ -1,0 +1,7 @@
+<div *ngFor="let item of Data">
+    <div class="ml-2 mt-3" style="float: left; border: 1px solid lightpink;">
+        <a routerLink="/list" [queryParams]="{data:item.ProductName }">
+     <img style="width: 200px; height: 200px;" src="{{item.Image}}">
+    </a>
+    </div>
+</div>

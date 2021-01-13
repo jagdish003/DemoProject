@@ -1,0 +1,80 @@
+<!-- <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+    <label>FirstName:</label>
+    <input type="text" class="form-control" formControlName="firstname">
+    <label>Lastname</label>
+    <input type="text" class="form-control" formControlName="lastname">
+    <div formGroupName="address">
+        <label>
+            city:
+            <input class="form-control" type="text" formControlName="city">
+        </label>
+        <label>
+            Address:
+            <input class="form-control" type="text" formControlName="address">
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+    <button type="submit" (click)="update()">update</button>
+</form> -->
+<button (click)="adddata()" class="btn btn-outline-primary mb-2">AddRow</button>
+<form [formGroup]="itemform" (ngSubmit)="SaveForm(itemform.value)">
+    <div class="container mt-5">
+
+        <table class="table table-bordered" formArrayName="data">
+            <thead>
+                <tr>
+                    <th>Srno</th>
+                    <th>ItemName</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>SubTotal</th>
+                    <th>Tax(%)</th>
+                    <th>TaxAmount</th>
+                    <th>TotalAmount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>                
+                <tr #table *ngFor="let itemrows of data.controls;let i =index" [formGroupName]="i">
+                    
+                    <td><input type="text" name="Srno" id="srno{{i}}" class="form-control" formControlName="Srno"></td>
+                    <td><input type="text" name="ItemName" id="ItemName{{i}}" class="form-control"
+                            formControlName="ItemName"></td>
+                    <td><input type="text" (keyup)="onchange()"  name="Qty" id="Qty{{i}}" class="form-control" formControlName="Qty" #Qtynn></td>
+                    <td><input type="text" name="Price" id="Price{{i}}"  (keyup)="Calculate(i)" class="form-control" formControlName="Price">
+                    </td>
+                    <td><input type="text" name="Subtotal" id="Subtotal{{i}}" class="form-control"
+                            formControlName="Subtotal" readonly></td>
+                    <td><input type="text" (keyup)="Calculate(i)" name="Tax" id="Tax{{i}}" class="form-control" formControlName="Tax"></td>
+                    <td><input type="text" name="TaxAmount" id="TaxAmount{{i}}" class="form-control"
+                            formControlName="TaxAmount" readonly></td>
+                    <td><input type="text" name="TotalAmount" id="TotalAmount{{i}}" class="form-control"
+                            formControlName="TotalAmount" readonly></td>
+
+                    <td style="width: 120px;"><i style="color: green;font-size: 30px;" (click)="adddata()"
+                            class="fa fa-plus-circle mr-2" aria-hidden="true"></i>
+                        <i style="font-size: 30px;color: red;" (click)="delete(i)" class="fa fa-trash"
+                            aria-hidden="true"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>{{Qty}}</td>
+                    <td></td>
+                    <td>{{SubTotal}}</td>
+                    <td></td>
+                    <td>{{ttlTaxAmount}}</td>
+                    <td>{{ttlamount}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <button class="btn btn-primary">Save</button>
+
+    </div>
+</form>
+
+<!-- {{itemform.value | json}} -->

@@ -1,0 +1,10 @@
+
+<div class="card m-5" style="width: 25rem;">
+    <img class="card-img-top" src="{{Data.Image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="font-size: 20px;">ProductName  &nbsp;&nbsp;&nbsp; {{Data.ProductName}}</h5>
+      <p class="card-text" style="font-size: 20px;">Produst price : &nbsp;&nbsp;&nbsp;{{Data.Price}}</p>
+      <i class="fa fa-plus-circle"  style="font-size: 30px;"aria-hidden="true" (click)="add()"></i><a class="" style="font-size: 30px;" > &nbsp;&nbsp; {{number}}&nbsp;&nbsp;</a><i class="fa fa-minus-circle" (click)="minus()"  style="font-size: 30px;"aria-hidden="true"></i>
+   <br><br> <button (click)="addtocart()" class="btn btn-primary">AddToCart</button>
+    </div>
+  </div>
