@@ -18,32 +18,33 @@ export class ItemlistComponent implements OnInit {
     ProductName:'Samsung10',
     id:2,
     Price:12000,
-    Image:"/assets/image/Electronic/el1/1.jpeg"
+
+    Image:"assets/image/Electronic/el1/1.jpeg"
   }
   Nokia52={
     ProductName:'Nokia52',
     id:2,
     Price:12000,
-    Image:"/assets/image/nokia1.jpg"
+    Image:"assets/image/nokia1.jpg"
   }
 Electornic=[
   {
     ProductName:'RedmiNote8',
     id:1,
     Price:10000,
-    Image:"/assets/image/sub/el1.png"
+    Image:"assets/image/sub/el1.png"
 },
 {
   ProductName:'Samsung10',
   id:2,
   Price:12000,
-  Image:"/assets/image/Electronic/el1/1.jpeg"
+  Image:"assets/image/Electronic/el1/1.jpeg"
 },
 {
   ProductName:'Nokia52',
   id:3,
   Price:12000,
-  Image:"/assets/image/nokia1.jpg"
+  Image:"assets/image/nokia1.jpg"
 },
 ]
 

@@ -2,14 +2,14 @@
   <mat-drawer #sidebar class="drawer" style="background-color: lightgrey;" mode="side" opened>
     
 <div style="background-color: lightslategray;">
-  <img style="margin-left: 20px;" src="\assets\user-male.png">
+  <img style="margin-left: 20px;" src="assets\user-male.png">
   <a style="color:white;margin-left:60px">Jagdish Karmur</a>
 </div>
 <mat-list role="list">
-  <mat-list-item role="listitem">EleCtronic</mat-list-item>
-  <mat-list-item role="listitem">Fashion</mat-list-item>
-  <mat-list-item role="listitem">Shoes</mat-list-item>
-  <mat-list-item role="listitem">Other</mat-list-item>
+  <mat-list-item  role="listitem"><a routerLink="/itemlist">Itemlist</a></mat-list-item>
+  <mat-list-item role="listitem"><a routerLink="/cart">Cart</a></mat-list-item>
+  <mat-list-item role="listitem"><a routerLink="/login">Login</a>></mat-list-item>
+  <mat-list-item role="listitem"><a routerLink="/register">register</a></mat-list-item>
 </mat-list>
   </mat-drawer>
   <mat-drawer-content>
