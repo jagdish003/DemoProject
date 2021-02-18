@@ -22,7 +22,7 @@ import { SubgroupComponent } from './subgroup/subgroup.component';
 import { ListComponent } from './list/list.component';
 import { CartComponent } from './cart/cart.component';
 import { TestComponent } from './test/test.component';
-
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
  @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,7 @@ import { TestComponent } from './test/test.component';
     MatButtonModule
    ,MatListModule,FormsModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
